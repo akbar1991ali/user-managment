@@ -1,0 +1,28 @@
+version: '1'
+services:
+  frontend:
+    network_mode: host
+    build:
+      context: ./ 
+    ports:
+      - '3000:3000'
+  backend:
+    network_mode: host
+    build:
+      context: ./
+    ports:
+      - '3010:3010'
+    env_file:
+      - ./server/.env
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - mongodb 
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
+volumes:
+  mongodb_data:

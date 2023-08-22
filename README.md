@@ -28,6 +28,9 @@ This project implements a simple user management website with both frontend and 
 
 1. Navigate to the `user-management/server` directory.
 2. Install dependencies: `npm install`
+3. Create a .env file and below var
+    `PORT=3010`
+    `DB_URI="mongodb://mongodb:27017/dbname"`
 
 ### Frontend
 1. Navigate to the `user-management/client` directory.
